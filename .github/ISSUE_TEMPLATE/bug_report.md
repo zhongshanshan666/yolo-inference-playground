@@ -16,7 +16,7 @@ assignees: ''
 3. 错误日志或截图
 
 ## 环境
-- YOLO 版本: (v5/v8/v10)
+- YOLO 版本: (v5/v8/v11/26)
 - 推理后端: (PyTorch/ONNX/TensorRT)
 - Python 版本:
 - 操作系统:
