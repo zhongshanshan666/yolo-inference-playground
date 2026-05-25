@@ -1,0 +1,17 @@
+model:
+  type: yolov8
+  weights: weights/yolov8n.onnx
+  input_size: [640, 640]
+  conf_threshold: 0.25
+  iou_threshold: 0.45
+
+backend:
+  type: onnxruntime
+  providers:
+    - CUDAExecutionProvider
+    - CPUExecutionProvider
+
+inference:
+  sinks:
+    - visualize
+  save_dir: outputs

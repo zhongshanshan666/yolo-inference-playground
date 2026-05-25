@@ -1,0 +1,19 @@
+model:
+  type: yolov8
+  weights: weights/yolov8n.onnx
+  input_size: [640, 640]
+  conf_threshold: 0.25
+  iou_threshold: 0.45
+  class_names: null  # null = use COCO 80 classes
+
+backend:
+  type: onnxruntime
+  providers:
+    - CUDAExecutionProvider
+    - CPUExecutionProvider
+  num_threads: 4
+
+inference:
+  sinks:
+    - visualize
+  save_dir: outputs

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yolo-playground"
+version = "0.1.0"
+description = "Multi-YOLO inference playground with ONNX / TensorRT / RKNN support"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "opencv-python-headless",
+    "onnxruntime",
+    "pyyaml",
+    "rich",
+]
+
+[project.optional-dependencies]
+gpu = ["onnxruntime-gpu"]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+yolo-infer = "yolo_playground.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["yolo_playground*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

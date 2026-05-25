@@ -208,3 +208,9 @@ __marimo__/
 
 # pycharm
 .idea/
+
+# Project
+weights/*
+outputs/
+assets/*.mp4
+assets/*.onnx
